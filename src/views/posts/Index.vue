@@ -13,6 +13,8 @@
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">nama</th>
+                                    <th scope="col">jurusan</th>
+                                    <th scope="col">hobi</th>
                                     <th scope="col">OPTIONS</th>
                                 </tr>
                             </thead>
@@ -20,6 +22,8 @@
                                <tr v-for="(siswa, index) in siswaList.data" :key="index">
                                     <td>{{ siswa.id }}</td>
                                     <td>{{ siswa.nama }}</td>
+                                    <td>{{ siswa.jurusan }}</td>
+                                    <td>{{ siswa.hobi }}</td>
                                     <td></td>
                                 </tr>
                             </tbody>
