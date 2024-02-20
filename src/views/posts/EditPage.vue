@@ -69,7 +69,7 @@ export default {
                 .then(response => {
 
                     //assign state posts with response data
-                    const postData = response.data.data[0];
+                    const postData = response.data.data[0]; // karna kalo gak pake 0 pasti undifined
         // Assign values to reactive state
         post.nama = postData.nama;
         post.jurusan = postData.jurusan;
