@@ -20,11 +20,14 @@
                             </thead>
                             <tbody>
                                <tr v-for="(siswa, index) in siswaList.data" :key="index">
-                                    <td>{{ siswa.id }}</td>
+                                    <td>{{ index + 1 }}</td>
                                     <td>{{ siswa.nama }}</td>
                                     <td>{{ siswa.jurusan }}</td>
                                     <td>{{ siswa.hobi }}</td>
-                                    <td></td>
+                                    <td class="text-center">
+                                        <router-link :to="{name: 'posts.edit', params:{id: siswa.id }}" class="btn btn-sm btn-primary me-2">EDIT</router-link>
+                                        <button @click.prevent="postDelete(siswa.id)" class="btn btn-sm btn-danger ml-1">DELETE</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -47,6 +50,17 @@ export default {
         }
     },
     methods: {
+        postDelete(id) {
+            axios.delete(`http://127.0.0.1:3000/delete/${id}`)
+                .then(response => {
+                    console.log('Berhasil menghapus siswa dengan id', id ,response);
+                    // reload
+                    location.reload()
+                })
+                .catch(error => {
+                    console.error('Gagal menghapus siswa:', error);
+                });
+        },
         setSiswaList(data) {
             this.siswaList = data;
         }
@@ -56,5 +70,7 @@ export default {
             .then((response) => this.setSiswaList(response.data))
             .catch((error) => console.log("gagal", error))
     }
+
+
 }
 </script>
