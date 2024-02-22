@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         postDelete(id) {
-            axios.delete(`http://192.168.31.197:3000/delete/${id}`)
+            axios.delete(`http://127.0.0.1:3000/delete/${id}`)
                 .then(response => {
                     console.log('Berhasil menghapus siswa dengan id', id ,response);
                     // reload
@@ -81,7 +81,7 @@ export default {
     },
    
     mounted() {
-        axios.get('http://192.168.31.197:3000/tampil')
+        axios.get('http://127.0.0.1:3000/tampil')
             .then((response) => this.setSiswaList(response.data.data))
 
             .catch((error) => console.log("gagal", error))

@@ -95,7 +95,7 @@ export default {
         onMounted(() => {
 
             //get API from Backend
-            axios.get(`http://192.168.31.197:3000/tampil/${route.params.id}`)
+            axios.get(`http://127.0.0.1:3000/tampil/${route.params.id}`)
                 .then(response => {
 
                     //assign state posts with response data
@@ -127,7 +127,7 @@ export default {
             let alamat = post.alamat;
             let nama_ortu = post.nama_ortu;
 
-            axios.put(`http://192.168.31.197:3000/edit/${route.params.id}`, {
+            axios.put(`http://127.0.0.1:3000/edit/${route.params.id}`, {
                 nis: nis,
                 nama: nama,
                 jenis_kelamin: jenis_kelamin,

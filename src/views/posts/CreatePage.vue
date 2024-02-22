@@ -135,7 +135,7 @@ export default {
       let nama_ortu = post.nama_ortu;
 
       axios
-        .post("http://192.168.31.197:3000/tambah", {
+        .post("http://127.0.0.1:3000/tambah", {
           nis: nis,
           nama: nama,
           jenis_kelamin: jenis_kelamin,
